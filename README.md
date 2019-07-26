@@ -1,5 +1,5 @@
 # todovue
-
+vue.js example simple todo
 ## Project setup
 ```
 npm install
