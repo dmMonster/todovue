@@ -2,7 +2,7 @@
     <div>
         <new-task-component v-on:addTaskEvent="addTask" />
         <ul v-for="task in tasks">
-            <li>{{task.description}}</li>
+            <li>{{task.description}}<button v-on:click="deleteTask(task.id)">Delete</button></li>
         </ul>
     </div>
 </template>
@@ -25,6 +25,11 @@
         methods:{
             addTask: function(description){
                 this.tasks.push({"id":0,"description":description});
+            },
+            deleteTask: function (id) {
+                this.tasks = this.tasks.filter(function (element) {
+                   return element.id !== id;
+                });
             }
         }
     }
