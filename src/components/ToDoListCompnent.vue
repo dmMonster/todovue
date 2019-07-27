@@ -24,7 +24,11 @@
         },
         methods:{
             addTask: function(description){
-                this.tasks.push({"id":0,"description":description});
+                let maxId = 0;
+                for(let i = 0; i<this.tasks.length; i++){
+                    if(maxId < this.tasks[i].id) maxId = this.tasks[i].id;
+                }
+                this.tasks.push({"id":maxId+1,"description":description});
             },
             deleteTask: function (id) {
                 this.tasks = this.tasks.filter(function (element) {
