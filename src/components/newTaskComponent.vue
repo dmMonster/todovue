@@ -39,8 +39,8 @@
         box-shadow: 2px 2px 2px 2px gray;
         border: none;
         font-weight: 600;
-        height: 2vw;
-        width: 6vw;
+        height: 6vh;
+        width: 8vw;
         border-radius: 3px;
         margin: 4px;
     }

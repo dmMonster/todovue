@@ -68,7 +68,7 @@
         justify-content: space-between;
     }
     .list-container{
-        max-width: 30vw;
+        width: 40%;
         margin: 1em auto;
     }
     .btn-delete{
