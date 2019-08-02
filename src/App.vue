@@ -8,13 +8,14 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import ToDoListComponent from './components/ToDoListCompnent'
-
+import store from './store'
 export default {
   name: 'app',
   components: {
     HelloWorld,
     ToDoListComponent
-  }
+  },
+  store
 }
 </script>
 

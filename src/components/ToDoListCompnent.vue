@@ -19,28 +19,24 @@
 <script>
     import NewTaskComponent from "@/components/newTaskComponent";
     import EditTaskComponent from "@/components/EditTaskComponent";
+    import { mapGetters } from 'vuex'
     export default {
         name: "ToDoListCompnent",
         components: {EditTaskComponent, NewTaskComponent},
         data(){
             return {
-                tasks: [
-                    {"id":1,"description":"first"},
-                    {"id":2,"description":"second"},
-                    {"id":3,"description":"third"},
-                    {"id":4,"description":"fourth"}
-                ],
                 modalVisible: false,
                 editingTaskId: 1,
             }
         },
+        computed: {
+            ...mapGetters({
+                'tasks': 'getTasks'
+            })
+        },
         methods:{
             addTask: function(description){
-                let maxId = 0;
-                for(let i = 0; i<this.tasks.length; i++){
-                    if(maxId < this.tasks[i].id) maxId = this.tasks[i].id;
-                }
-                this.tasks.push({"id":maxId+1,"description":description});
+                this.$store.dispatch('addTask',description);
             },
             deleteTask: function (id) {
                 this.tasks = this.tasks.filter(function (element) {
