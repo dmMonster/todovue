@@ -39,19 +39,15 @@
                 this.$store.dispatch('addTask',description);
             },
             deleteTask: function (id) {
-                this.tasks = this.tasks.filter(function (element) {
-                   return element.id !== id;
-                });
+              this.$store.dispatch('deleteTask',id)
             },
             showModal: function(id){
                 this.modalVisible = true;
                 this.editingTaskId = id;
             },
             editTask: function (id,description) {
-                let editingTask = this.tasks.filter(function (element) {
-                    return element.id === id;
-                });
-                editingTask[0].description = description;
+                console.log(id + ' '+ description )
+                this.$store.dispatch('editTask',{id,description});
                 this.modalVisible = false;
                 }
             }

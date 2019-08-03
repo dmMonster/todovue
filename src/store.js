@@ -23,12 +23,32 @@ export default new Vuex.Store({
                 if(maxId < state.tasks[i].id) maxId = state.tasks[i].id;
             }
             this.state.tasks.push({"id":maxId+1,"description":description});
+        },
+        editTask(state,{id,description}){
+            let editingTask = state.tasks.filter(function (element) {
+                return element.id === id;
+            });
+            editingTask[0].description = description;
+        },
+        deleteTask(state,id){
+            state.tasks = state.tasks.filter(function (element) {
+                return element.id !== id;
+            });
         }
     },
     actions: {
         addTask({commit}, description){
             console.log(description);
             commit('addTask',description);
+        },
+        editTask({commit},{id,description}){
+            console.log(id +' '+ description);
+            commit('editTask',{id,description});
+        },
+        deleteTask({commit},id){
+            console.log(id);
+            commit('deleteTask',id);
         }
+
     }
 })

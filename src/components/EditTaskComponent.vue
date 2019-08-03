@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-edit-task">
+    <div v-on:click.self="$parent.modalVisible = false" class="modal-edit-task">
         <div class="modal-content">
             <input v-model="taskDescription" type="text">
             <button v-on:click="$emit('editTaskEvent',id,taskDescription)">Save</button>
@@ -17,7 +17,7 @@
         },
         props: {
             id: Number,
-        }
+        },
     }
 </script>
 
@@ -35,6 +35,7 @@
         position: absolute;
         top: 50%;
         left: 38%;
+        padding: 20px;
         input{
             border: none;
             border-bottom: 1px solid black;
