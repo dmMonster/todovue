@@ -1,5 +1,7 @@
 # todovue
-vue.js example simple todo
+vue.js example simple todo for testing new vue functions:
+  -Vuex,
+  
 ## Project setup
 ```
 npm install
