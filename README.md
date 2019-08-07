@@ -1,6 +1,6 @@
 # todovue
 vue.js example simple todo for testing new vue functions:
-  -Vuex,
+  -Vuex(action,mutations,getters),
   
 ## Project setup
 ```
